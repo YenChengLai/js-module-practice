@@ -1,3 +1,4 @@
-import { sum } from './sum';
+const sum = require('./sum');
 
-console.log(sum(5, 6));
+const total = sum(5, 6);
+console.log(total);
