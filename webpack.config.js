@@ -15,10 +15,10 @@ const config = {
             {
                 use: ['style-loader', 'css-loader'],  // the order is important, dealed from right to left
                 test: /\.css$/
-            },
-            
+            }
         ]
-    }
+    },
+    mode: 'production'
 };
 
 module.exports = config;
