@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
     entry: './src/index.js',
@@ -12,12 +13,26 @@ const config = {
                 use: 'babel-loader',
                 test: /\.js$/
             },
+            // {
+            //     use: ['style-loader', 'css-loader'],  // the order is important, dealed from right to left
+            //     test: /\.css$/
+            // }
             {
-                use: ['style-loader', 'css-loader'],  // the order is important, dealed from right to left
-                test: /\.css$/
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader'
+                    }
+                ]
             }
         ]
     },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'style.css'
+        })
+    ],
     mode: 'production'
 };
 
