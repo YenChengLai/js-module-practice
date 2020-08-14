@@ -5,6 +5,14 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'build'),  // use pathModule of NodeJS to generate path automatically
         filename: 'bundle.js'                    // __dirname is the constant of NodeJS, representing current directory
+    },
+    module: {
+        rules: [
+            {
+                use: 'babel-loader',
+                test: /\.js$/
+            }
+        ]
     }
 };
 
