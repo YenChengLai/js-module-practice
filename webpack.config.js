@@ -5,7 +5,8 @@ const config = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),  // use pathModule of NodeJS to generate path automatically
-        filename: 'bundle.js'                    // __dirname is the constant of NodeJS, representing current directory
+        filename: 'bundle.js',                   // __dirname is the constant of NodeJS, representing current directory
+        publicPath: 'build/'                     // used by loaders which produce files to the build folder
     },
     module: {
         rules: [
