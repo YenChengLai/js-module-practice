@@ -25,6 +25,16 @@ const config = {
                         loader: 'css-loader'
                     }
                 ]
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: { limit: 40000 }
+                    }
+                    , 'image-webpack-loader'
+                ]  // the order is important, dealed from right to left
             }
         ]
     },
